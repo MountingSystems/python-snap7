@@ -16,6 +16,7 @@ from .setters import (
     set_time,
     set_lreal,
     set_date,
+    set_double,
 )
 
 from .getters import (
@@ -42,6 +43,8 @@ from .getters import (
     get_char,
     get_wchar,
     get_dtl,
+    get_double,
+    get_12bdtl,
 )
 
 __all__ = [
@@ -85,4 +88,7 @@ __all__ = [
     "set_bool",
     "set_fstring",
     "set_string",
+    "set_double",
+    "get_double",
+    "get_12bdtl",
 ]

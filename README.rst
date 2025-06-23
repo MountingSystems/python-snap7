@@ -14,7 +14,6 @@ Installation
 
 If you are running Windows (amd64), Mac OS X (amd64/aarch64), GNU/Linux (amd64/arm64) or a compatible platform you can install the binary wheel using::
 
-   $ pip install python-snap7
+   $ pip install git+https://github.com/MountingSystems/python-snap7.git
 
 
-Otherwise, please follow the `online installation instructions <https://python-snap7.readthedocs.io/en/latest/installation.html>`_ to install python-snap7 from source.

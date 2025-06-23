@@ -712,3 +712,23 @@ def get_wstring(bytearray_: bytearray, byte_index: int) -> str:
 
 def get_array(bytearray_: bytearray, byte_index: int) -> NoReturn:
     raise NotImplementedError
+
+
+def get_double(_bytearray, byte_index):
+    """
+    Get double value. create float from 8 bytes
+    """
+    x = _bytearray[byte_index:byte_index + 8]
+    double = struct.unpack('>d', struct.pack('8B', *x))[0]
+    return double
+
+def get_12bdtl(_bytearray, byte_index):
+    data = _bytearray[byte_index:byte_index+12]
+    value = str(struct.unpack('>H', data[0:2])[0]) + "-" \
+    + str(struct.unpack('B', data[2:3])[0]).zfill(2) + "-" \
+    + str(struct.unpack('B', data[3:4])[0]).zfill(2) + " "\
+    + str(struct.unpack('B', data[5:6])[0]).zfill(2) + ":" \
+    + str(struct.unpack('B', data[6:7])[0]).zfill(2) + ":" \
+    + str(struct.unpack('B', data[7:8])[0]).zfill(2) + "." \
+    + str(struct.unpack('>L', data[8:12])[0])
+    return value

@@ -549,3 +549,17 @@ def set_date(bytearray_: bytearray, byte_index: int, date_: date) -> bytearray:
     _bytes = struct.unpack("2B", struct.pack(">h", _days))
     bytearray_[byte_index : byte_index + 2] = _bytes
     return bytearray_
+
+### New Datatypes ###
+def set_double(bytearray_: bytearray, byte_index: int, double):
+    """
+    Set Double value
+
+    make 8 byte data from real
+
+    """
+    double = float(double)
+    double = struct.pack('>d', double)
+    _bytes = struct.unpack('8B', double)
+    for i, b in enumerate(_bytes):
+        bytearray_[byte_index + i] = b
