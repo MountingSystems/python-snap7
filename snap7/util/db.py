@@ -133,6 +133,9 @@ from snap7.util import (
     get_char,
     get_wchar,
     get_dtl,
+    get_double,
+    set_double,
+    get_12bdtl,
 )
 
 logger = getLogger(__name__)
@@ -625,6 +628,8 @@ class Row:
                 "CHAR": get_char,
                 "WCHAR": get_wchar,
                 "DTL": get_dtl,
+                "DOUBLE": get_double,
+                "12bdtl": get_12bdtl,
             }
             if type_ in type_to_func:
                 return type_to_func[type_](bytearray_, byte_index)
@@ -692,6 +697,7 @@ class Row:
                 "BYTE": set_byte,
                 "USINT": set_usint,
                 "SINT": set_sint,
+                "DOUBLE": set_double,
             }
             if type_ in type_to_func:
                 return type_to_func[type_](bytearray_, byte_index, value)
